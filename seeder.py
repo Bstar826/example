@@ -6,15 +6,17 @@ import time
 from faker import Faker
 fake = Faker()
 
-
 def seed_users(num_entries=10, overwrite=False):
     """
+    
     Creates num_entries worth a new users
     """
     if overwrite:
         print("Overwriting Users")
         User.objects.all().delete()
     count = 0
+    
+    
     for _ in range(num_entries):
         first_name = fake.first_name()
         last_name = fake.last_name()
